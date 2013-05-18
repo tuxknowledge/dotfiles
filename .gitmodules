@@ -13,3 +13,6 @@
 [submodule "colors/Smyck-Color-Scheme"]
 	path = colors/Smyck-Color-Scheme
 	url = https://github.com/hukl/Smyck-Color-Scheme.git
+[submodule "colors/solarized"]
+	path = colors/solarized
+	url = https://github.com/altercation/solarized.git
