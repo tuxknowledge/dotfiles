@@ -5,6 +5,7 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	editor = vim
 [color]
 	ui = true
 [merge]
