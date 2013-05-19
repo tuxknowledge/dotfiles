@@ -100,6 +100,7 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o
 
 " Tagbar
 let g:tagbar_usearrows=1
+let g:tagbar_autofocus = 1
 
 " Python mode
 let g:pymode_rope = 0
@@ -133,8 +134,14 @@ let g:pymode_folding = 0
 " Autoremove unused whitespaces
 let g:pymode_utils_whitespaces = 1
 
+" run pep8+pyflakes+pylint validator with \8
+autocmd FileType python map <buffer> <leader>8 :PyLint<CR>
+
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
+" Save as sudo
+ca w!! w !sudo tee "%"
 
 " Strip trailing whitespaces on each save
 fun! <SID>StripTrailingWhitespaces()
