@@ -82,8 +82,13 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
-" Enter NERDtree by F2
-map <F2> :NERDTreeToggle<CR>
+" NERDtree
+nnoremap <f1> :BufExplorer<cr>
+nnoremap <f2> :NERDTreeToggle<cr>
+nnoremap <f3> :TagbarToggle<cr>
+
+let g:NERDTreeWinSize = 40
+let g:NERDTreeMouseMode = 2
 
 " Python mode
 let g:pymode_rope = 0
