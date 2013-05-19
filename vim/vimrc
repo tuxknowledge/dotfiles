@@ -8,6 +8,26 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" 256 Color support
+set t_Co=256
+
+" UTF-8
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
+set backspace=indent,eol,start
+
+" Copy / paste support by F11
+set pastetoggle=<F11>
+
+" Some usefull search settings
+set ignorecase
+set incsearch
+set smartcase
+set showmatch
+set hlsearch
+
 " Solarized
 set background=dark
 let g:solarized_termtrans=1
@@ -16,23 +36,46 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
+" Display settings
 set cmdheight=2
 set laststatus=2
-set statusline=[%l,%v\ %P%M][CWD:\ %{CWD()}][FILE:\ %f]\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}\ %#warningmsg#%{SyntasticStatuslineFlag()}%*
+set scrolloff=3
+set lazyredraw
+set statusline=%<[%n]\ %f\ %y\ %r\ %1*%m%*%{fugitive#statusline()}\%w%=%(Column:\ %c%)%4(%)%-10(Line:\ %l%)\%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ \ \ \ \ \ ASCII=%b\ HEX=%B\ \ \ \ \ %=%t
 set showcmd
 set showmode
 set number
+highlight Cursor guibg=Blue guifg=None
 
-function! CWD()
-    let curdir = substitute(getcwd(), '/home/mnazim', "~/", "g")
-    return curdir
-endfunction
+if has("gui_running")
+	set guifont=Anonymous\ Pro:h11
+	set gcr=n:blinkon0
+	set go-=T
+	set cursorline
+endif
+
+set vb t_vb=
+set backspace=2
+set textwidth=79
+set showbreak=~~
+set linebreak
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smartindent
+set smarttab
+set ruler
+set history=1000
+
+set wildmenu
+set wildmode=longest,full
+set wildignore=.o,.so,.*~,*.obj,*.bak,*.exe,*.pyc,*.swp
 
 " vim-indent
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
-
 
 " Enter NERDtree by F2
 map <F2> :NERDTreeToggle<CR>
