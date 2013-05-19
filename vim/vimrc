@@ -84,17 +84,22 @@ set titleold="Terminal"
 set titlestring=%F\ -\ Vim
 
 " vim-indent
-let g:indent_guides_auto_colors = 0
+let g:indent_guides_auto_colors=0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
-" NERDtree
+" Mappings
 nnoremap <f1> :BufExplorer<cr>
-nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TagbarToggle<cr>
 
-let g:NERDTreeWinSize = 40
-let g:NERDTreeMouseMode = 2
+" NERDtree
+nnoremap <f2> :NERDTreeToggle<cr>
+let g:NERDTreeWinSize=40
+let g:NERDTreeMouseMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+
+" Tagbar
+let g:tagbar_usearrows=1
 
 " Python mode
 let g:pymode_rope = 0
