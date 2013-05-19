@@ -52,10 +52,11 @@ if has("gui_running")
     set gcr=n:blinkon0
     set go-=T
     set cursorline
+    set lines=46
 endif
 
 " Remap leader to comma
-:let mapleader = ","
+let mapleader=","
 nmap <leader>l :set list!<CR>
 set listchars=tab:»\ ,eol:¬
 
@@ -76,6 +77,11 @@ set history=1000
 set wildmenu
 set wildmode=longest,full
 set wildignore=.o,.so,.*~,*.obj,*.bak,*.exe,*.pyc,*.swp
+
+" Enable automatic title setting for terminals
+set title
+set titleold="Terminal"
+set titlestring=%F\ -\ Vim
 
 " vim-indent
 let g:indent_guides_auto_colors = 0
