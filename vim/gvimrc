@@ -7,4 +7,22 @@ set columns=100
 set lines=61
 set winpos 0 0
 colorscheme smyck
+set guitablabel=%N\ %t\ %m
 
+" C-TAB and C-SHIFT-TAB cycle tabs forward and backward
+nmap <c-tab> :tabnext<cr>
+imap <c-tab> <c-o>:tabnext<cr>
+vmap <c-tab> <c-o>:tabnext<cr>
+nmap <c-s-tab> :tabprevious<cr>
+imap <c-s-tab> <c-o>:tabprevious<cr>
+vmap <c-s-tab> <c-o>:tabprevious<cr>
+
+" -----------------------------------------------------------
+"  Highlight Trailing Whitespace
+" -----------------------------------------------------------
+"
+highlight SpecialKey    guifg=#222222 guibg=#000000
+highlight StatusLineNC  guifg=#444444 guibg=#222222
+highlight StatusLine    guifg=#AAAACC guibg=#222222
+
+hi def link coffeeSpecialVar Type
