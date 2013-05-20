@@ -7,3 +7,8 @@ hardstatus alwayslastline "%{=}%?%{r}%H %L=%{+b}%?%{b}%-Lw%47L>%?%{w}[%n*%f %t] 
 hardstatus on
 msgwait 15
 setenv DISPLAY ":0.0"
+defutf8 on
+defmonitor on
+shell bash
+shelltitle ""
+
