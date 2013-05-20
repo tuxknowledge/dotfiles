@@ -1,0 +1,9 @@
+alias ls="ls --color"
+alias l="ls -lha --color"
+alias cp="cp -iv"
+alias ln="ln -i"
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias egrep="egrep --color"
+alias grep="grep --color=auto"
+
