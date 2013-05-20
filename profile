@@ -7,5 +7,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-PATH="$HOME/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+PATH="/usr/local/bin:$PATH"
+
+test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 
