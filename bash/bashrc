@@ -77,6 +77,16 @@ export PROJECT_HOME=$HOME/projects/python
 if [ "$UNAME" = Darwin ]; then
     source /usr/local/bin/virtualenvwrapper.sh
     source /usr/local/git/contrib/completion/git-completion.bash
+elif [ "$UNAME" = Linux ]; then
+    source /etc/bash_completion.d/virtualenvwrapper
+fi
+
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
