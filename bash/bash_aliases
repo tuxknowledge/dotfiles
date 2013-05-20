@@ -1,9 +1,14 @@
-alias ls="ls --color"
-alias l="ls -lha --color"
+alias ls="ls --color -h -F"
+alias l="ls -lha --color -F"
 alias cp="cp -iv"
-alias ln="ln -i"
+alias ln="ln -iv"
 alias rm="rm -iv"
 alias mv="mv -iv"
+alias du="du -h"
+alias df="df -h"
+alias mkdir="mkdir -p -v"
+
+alias ps="ps -afe"
 alias egrep="egrep --color"
 alias grep="grep --color=auto"
 
