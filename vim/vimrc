@@ -47,13 +47,17 @@ set showmode
 set number
 highlight Cursor guibg=Blue guifg=None
 
-if has("gui_running")
-    set guifont=Anonymous\ Pro:h11
-    set gcr=n:blinkon0
-    set go-=T
-    set cursorline
-    set lines=46
-endif
+"if has("gui_running")
+"    set guifont=Anonymous\ Pro:h13
+"    set gcr=n:blinkon0
+"    set cursorline
+"    set guioptions-=T
+"    set anti
+"    set columns=100
+"    set lines=61
+"    set winpos 0 0
+"    colorscheme smyck
+"endif
 
 " Remap leader to comma
 let mapleader=","

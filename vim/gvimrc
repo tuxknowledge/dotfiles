@@ -1,0 +1,10 @@
+set guifont=Anonymous\ Pro:h13
+set gcr=n:blinkon0
+set cursorline
+set guioptions-=T
+set anti
+set columns=100
+set lines=61
+set winpos 0 0
+colorscheme smyck
+
