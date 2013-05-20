@@ -7,7 +7,7 @@
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab
 	editor = vim
 [color]
-	ui = true
+	ui = auto
 [diff]
 	tool = vimdiff
 [merge]
@@ -19,3 +19,9 @@
 	lineNumber = true
 [github]
 	user = tuxknowledge
+[sendemail]
+    smtpserver = smtp.gmail.com
+    smtpserverport = 587
+    smtpserverpencryption = tls
+    smtpuser = andre.raabe@gmail.com
+
