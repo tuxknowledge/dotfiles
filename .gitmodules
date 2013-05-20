@@ -79,3 +79,9 @@
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = https://github.com/wincent/Command-T.git
+[submodule "powerline"]
+	path = powerline
+	url = https://github.com/Lokaltog/powerline.git
+[submodule "tmux/colors/tmux-colors-solarized"]
+	path = tmux/colors/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git

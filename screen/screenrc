@@ -1,0 +1,9 @@
+vbell off
+autodetach on
+startup_message off
+defscrollback 10000
+silencewait 15
+hardstatus alwayslastline "%{=}%?%{r}%H %L=%{+b}%?%{b}%-Lw%47L>%?%{w}[%n*%f %t] %?%+Lw%?%= %l | %D %d.%m.%y - %c"
+hardstatus on
+msgwait 15
+setenv DISPLAY ":0.0"
