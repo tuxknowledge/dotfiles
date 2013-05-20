@@ -78,6 +78,9 @@ set smarttab
 set ruler
 set history=1000
 
+set splitbelow
+set splitright
+
 set wildmenu
 set wildmode=longest,full
 set wildignore=.o,.so,.*~,*.obj,*.bak,*.exe,*.pyc,*.swp
