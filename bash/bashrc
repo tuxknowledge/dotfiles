@@ -4,7 +4,6 @@
 
 : ${UNAME=$(uname)}
 
-
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi

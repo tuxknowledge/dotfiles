@@ -1,7 +1,17 @@
 #!/bin/bash
 
-# powerlione
+: ${UNAME=$(uname)}
+
+cd ~/dotfiles
+
+# powerline
 git submodule update --init
+
+# powerline-fonts
+if [ "$UNAME" = Linux ]; then
+    mkdir -p ~/.fonts
+    find powerline-fonts/ -name *.ttf -exec ln -s ~/dotfiles/{} ~/.fonts/ \;
+fi
 
 pushd colors/solarized
 # solarized
