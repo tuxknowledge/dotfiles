@@ -11,6 +11,7 @@ git submodule update --init
 if [ "$UNAME" = Linux ]; then
     mkdir -p ~/.fonts
     find powerline-fonts/ -name *.ttf -exec ln -s ~/dotfiles/{} ~/.fonts/ \;
+    fc-cache -vf ~/.fonts
 fi
 
 pushd colors/solarized
