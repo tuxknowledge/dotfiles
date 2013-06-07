@@ -85,3 +85,6 @@
 [submodule "tmux/colors/tmux-colors-solarized"]
 	path = tmux/colors/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = https://github.com/Lokaltog/powerline-fonts.git
