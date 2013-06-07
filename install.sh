@@ -1,20 +1,25 @@
 #!/bin/bash
 
+# powerlione
 git submodule update --init
 
 pushd colors/solarized
+# solarized
 git submodule update --init
 popd
 
 pushd vim/bundle/jedi-vim
+# jedi-vim
 git submodule update --init
 popd
 
 pushd vim/bundle/zencoding
+# zencoding
 git submodule update --init
 popd
 
 pushd vim/bundle/command-t
+# command-t
 git submodule update --init
 popd
 
@@ -32,4 +37,6 @@ ln -s dotfiles/vim/vimrc .vimrc
 ln -s dotfiles/vim/gvimrc .gvimrc
 ln -s dotfiles/vim .vim
 ln -s dotfiles/scite/SciTEUser.properties .SciTEUser.properties
+
 popd
+
