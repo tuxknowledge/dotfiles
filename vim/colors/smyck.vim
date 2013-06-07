@@ -1,1 +1,1 @@
-/home/andrer/dotfiles/colors/Smyck-Color-Scheme/smyck.vim
+../../colors/Smyck-Color-Scheme/smyck.vim
