@@ -1,0 +1,12 @@
+# Turn off screen blanking
+xset s off
+
+# Enable DPMS energy saving
+xset +dpms
+
+xset -b
+xrdb ~/.Xresources
+setxkbmap de
+
+startfluxbox
+

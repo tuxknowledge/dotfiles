@@ -7,12 +7,16 @@ cd ~/dotfiles
 # powerline
 git submodule update --init
 
-# powerline-fonts
 if [ "$UNAME" = Linux ]; then
+    # powerline-fonts
     mkdir -p ~/.fonts
     find powerline-fonts/ -name *.ttf -exec ln -s ~/dotfiles/{} ~/.fonts/ \;
     find fonts/ -name *.ttf -exec ln -s ~/dotfiles/{} ~/.fonts/ \;
     fc-cache -vf ~/.fonts
+
+    ln -s x/xinitrc ~/.xinitrc
+    ln -s x/xrdb ~/.xrdb
+    ln -s x/Xresources ~/.Xresources
 fi
 
 pushd colors/solarized

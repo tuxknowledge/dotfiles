@@ -1,5 +1,7 @@
 #!/bin/bash
 
+: ${UNAME=$(uname)}
+
 pushd ~
 
 unlink .SciTEUser.properties
@@ -14,6 +16,12 @@ unlink .screenrc
 unlink .tmux.conf
 unlink .vim
 unlink .vimrc
+
+if [ "$UNAME" = Linux ]; then
+    unlink .xinitrc
+    unlink .xrdb
+    unlink .Xresources
+fi
 
 popd
 

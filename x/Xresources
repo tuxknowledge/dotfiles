@@ -1,0 +1,24 @@
+#include ".xrdb/look-zenburn.xrdb"
+
+! generall settings
+Xft.dpi: 96
+
+! xterm settings
+XTerm*faceName: xft:Monaco for Powerline:regular:size=10:antialias=true
+XTerm*faceSize: 10
+XTerm*BorderWidth: 0
+
+! settings for URxvt
+
+URxvt.depth: 32
+URxvt.scrollBar: off
+URxvt*font:                 xft:Monaco for Powerline:regular:size=10:antialias=true
+URxvt*imFont:               xft:Monaco for Powerline:regular:size=10:antialias=true
+URxvt*boldFont:             xft:Monaco for Powerline:bold:size=10:antialias=true
+URxvt*italicFont:           xft:Monaco for Powerline:italic:size=10:antialias=true
+URxvt*boldItalicFont:       xft:Monaco for Powerline:bold:italic:size=10:antialias=true
+URxvt*internalBorder:       false
+URxvt*externalBorder:       false
+URxvt*thickness:            0
+URxvt*borderWidth:          0
+!
