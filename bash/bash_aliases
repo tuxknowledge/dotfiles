@@ -1,4 +1,4 @@
-alias ls="ls --color -h -F"
+alias la="ls --color -h -F"
 alias l="ls -lha --color -F"
 alias cp="cp -iv"
 alias ln="ln -iv"

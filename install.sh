@@ -2,7 +2,7 @@
 
 : ${UNAME=$(uname)}
 
-cd ~/dotfiles
+pushd ~/dotfiles
 
 # powerline
 git submodule update --init
@@ -14,9 +14,9 @@ if [ "$UNAME" = Linux ]; then
     find fonts/ -name *.ttf -exec ln -s ~/dotfiles/{} ~/.fonts/ \;
     fc-cache -vf ~/.fonts
 
-    ln -s x/xinitrc ~/.xinitrc
-    ln -s x/xrdb ~/.xrdb
-    ln -s x/Xresources ~/.Xresources
+    [ ! -e ~/.xinitrc ] && ln -s ~/dotfiles/x/xinitrc ~/.xinitrc
+    [ ! -e ~/.xrdb ] && ln -s ~/dotfiles/x/xrdb ~/.xrdb
+    [ ! -e ~/.Xresources ] && ln -s ~/dotfiles/x/Xresources ~/.Xresources
 fi
 
 pushd colors/solarized
@@ -39,20 +39,18 @@ pushd vim/bundle/command-t
 git submodule update --init
 popd
 
-pushd ~
-
-ln -s dotfiles/profile .profile
-ln -s dotfiles/bash/bashrc .bashrc
-ln -s dotfiles/bash/bash_aliases .bash_aliases
-ln -s dotfiles/git/gitconfig .gitconfig
-ln -s dotfiles/git/gitk .gitk
-ln -s dotfiles/git/gitignore_global .gitignore_global
-ln -s dotfiles/screen/screenrc .screenrc
-ln -s dotfiles/tmux/tmux.conf .tmux.conf
-ln -s dotfiles/vim/vimrc .vimrc
-ln -s dotfiles/vim/gvimrc .gvimrc
-ln -s dotfiles/vim .vim
-ln -s dotfiles/scite/SciTEUser.properties .SciTEUser.properties
-
 popd
+
+[ ! -e ~/.profile ] && ln -s dotfiles/profile ~/.profile
+[ ! -e ~/.bashrc ] && ln -s dotfiles/bash/bashrc ~/.bashrc
+[ ! -e ~/.bash_aliases ] && ln -s dotfiles/bash/bash_aliases ~/.bash_aliases
+[ ! -e ~/.gitconfig ] && ln -s dotfiles/git/gitconfig ~/.gitconfig
+[ ! -e ~/.gitk ] && ln -s dotfiles/git/gitk ~/.gitk
+[ ! -e ~/.gitignore_global ] && ln -s dotfiles/git/gitignore_global ~/.gitignore_global
+[ ! -e ~/.screenrc ] && ln -s dotfiles/screen/screenrc ~/.screenrc
+[ ! -e ~/.tmux.conf ] && ln -s dotfiles/tmux/tmux.conf ~/.tmux.conf
+[ ! -e ~/.vim ] && ln -s dotfiles/vim ~/.vim
+[ ! -e ~/.vimrc ] && ln -s dotfiles/vim/vimrc ~/.vimrc
+[ ! -e ~/.gvimrc ] && ln -s dotfiles/vim/gvimrc ~/.gvimrc
+[ ! -e ~/.SciTEUser.properties ] && ln -s dotfiles/scite/SciTEUser.properties ~/.SciTEUser.properties
 
