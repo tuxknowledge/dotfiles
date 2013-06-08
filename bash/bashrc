@@ -70,8 +70,8 @@ export HISTIGNORE="&:ls:la:pwd:fg:bg:history:exit:clear"
 export HISTSIZE=4096
 export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S"
 
-export WORKON_HOME=$HOME/projects/python/environments
-export PROJECT_HOME=$HOME/projects/python
+export WORKON_HOME=$HOME/projekte/python/environments
+export PROJECT_HOME=$HOME/projekte/python
 
 if [ "$UNAME" = Darwin ]; then
     source /usr/local/bin/virtualenvwrapper.sh
