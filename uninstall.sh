@@ -5,6 +5,7 @@
 [ -e ~/.SciTEUser.properties ] && unlink ~/.SciTEUser.properties
 [ -e ~/.bash_aliases ] && unlink ~/.bash_aliases
 [ -e ~/.bashrc ] && unlink ~/.bashrc
+[ -e ~/.bash_logout ] && unlink ~/.bash_logout
 [ -e ~/.gitconfig ] && unlink ~/.gitconfig
 [ -e ~/.gitignore_global ] && unlink ~/.gitignore_global
 [ -e ~/.gitk ] && unlink ~/.gitk

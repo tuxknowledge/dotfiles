@@ -43,6 +43,7 @@ popd
 
 [ ! -e ~/.profile ] && ln -s dotfiles/profile ~/.profile
 [ ! -e ~/.bashrc ] && ln -s dotfiles/bash/bashrc ~/.bashrc
+[ ! -e ~/.bash_logout ] && ln -s dotfiles/bash/bash_logout ~/.bash_logout
 [ ! -e ~/.bash_aliases ] && ln -s dotfiles/bash/bash_aliases ~/.bash_aliases
 [ ! -e ~/.gitconfig ] && ln -s dotfiles/git/gitconfig ~/.gitconfig
 [ ! -e ~/.gitk ] && ln -s dotfiles/git/gitk ~/.gitk
