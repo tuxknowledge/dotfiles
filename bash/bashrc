@@ -26,6 +26,7 @@ else
     MANPAGER="$PAGER"
 fi
 export PAGER MANPAGER
+export MANWIDTH=80
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
@@ -33,31 +34,56 @@ if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-#case "$TERM" in
-#xterm-color)
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#    ;;
-#*)
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#    ;;
-#esac
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+    else
+    color_prompt=
+    fi
+fi
 
 # Comment in the above and uncomment this below for a color prompt
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")\$ '
+fi
+unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
 esac
 
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
 EDITOR=vim
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ "$UNAME" = Linux ]; then
+    alias ls='ls --color=auto'
 fi
 
 set meta-flag on
@@ -70,14 +96,17 @@ export HISTIGNORE="&:ls:la:pwd:fg:bg:history:exit:clear"
 export HISTSIZE=4096
 export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S"
 
-export WORKON_HOME=$HOME/projekte/python/environments
-export PROJECT_HOME=$HOME/projekte/python
-
 if [ "$UNAME" = Darwin ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-    source /usr/local/git/contrib/completion/git-completion.bash
+    if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+        . /usr/local/bin/virtualenvwrapper.sh
+    fi
+    if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+        source /usr/local/git/contrib/completion/git-completion.bash
+    fi
 elif [ "$UNAME" = Linux ]; then
-    source /etc/bash_completion.d/virtualenvwrapper
+    if [ -f /etc/bash_completion.d/virtualenvwrapper ]; then
+        . /etc/bash_completion.d/virtualenvwrapper
+    fi
 fi
 
 if ! shopt -oq posix; then
@@ -88,10 +117,12 @@ if ! shopt -oq posix; then
     fi
 fi
 
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
-
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM="auto"
+
+export WORKON_HOME=$HOME/projekte/python/environments
+export PROJECT_HOME=$HOME/projekte/python
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
 
