@@ -42,11 +42,12 @@ set cmdheight=2
 set laststatus=2
 set scrolloff=3
 set lazyredraw
-set statusline=%<[%n]\ %f\ %y\ %r\ %1*%m%*%{fugitive#statusline()}\%w%=%(Column:\ %c%)%4(%)%-10(Line:\ %l%)\%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ \ \ \ \ \ ASCII=%b\ HEX=%B\ \ \ \ \ %=%t
 set showcmd
 set showmode
 set number
 highlight Cursor guibg=Blue guifg=None
+
+let g:airline_powerline_fonts=1
 
 "if has("gui_running")
 "    set guifont=Anonymous\ Pro:h13
