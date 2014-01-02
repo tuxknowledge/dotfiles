@@ -29,13 +29,13 @@ set showmatch
 set hlsearch
 
 " Solarized
-"set background=dark
+set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
-"colorscheme solarized
-colorscheme Tomorrow-Night-Bright
+colorscheme solarized
+"colorscheme Tomorrow-Night-Bright
 
 " Display settings
 set cmdheight=2
