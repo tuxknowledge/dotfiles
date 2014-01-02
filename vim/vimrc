@@ -35,7 +35,7 @@ set hlsearch
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 "colorscheme solarized
-colorscheme smyck
+colorscheme Tomorrow-Night-Bright
 
 " Display settings
 set cmdheight=2
