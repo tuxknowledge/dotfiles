@@ -14,7 +14,7 @@ shopt -s histappend
 shopt -s dotglob
 
 set -o noclobber
-set -o ignoreeof
+set -o ignoreeof # Prevent accidental terminal logouts in the bash shell
 # notify of bg job completion immediately
 set -o notify
 
