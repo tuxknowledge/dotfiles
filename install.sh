@@ -29,8 +29,8 @@ pushd vim/bundle/jedi-vim
 git submodule update --init
 popd
 
-pushd vim/bundle/zencoding
-# zencoding
+pushd vim/bundle/emmet-vim
+# emmet-vim
 git submodule update --init
 popd
 
