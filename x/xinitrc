@@ -8,5 +8,5 @@ xset -b
 xrdb ~/.Xresources
 setxkbmap de
 xscreensaver &
-startfluxbox
+i3
 
