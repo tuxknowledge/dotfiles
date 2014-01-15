@@ -28,14 +28,17 @@ set smartcase
 set showmatch
 set hlsearch
 
-" Solarized
 set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-colorscheme solarized
-"colorscheme Tomorrow-Night-Bright
+
+if has("unix")
+    colorscheme Tomorrow-Night-Bright
+else
+    colorscheme solarized
+    "let g:solarized_termtrans=1
+    "let g:solarized_termcolors=256
+    "let g:solarized_contrast="high"
+    "let g:solarized_visibility="high"
+endif
 
 " Display settings
 set cmdheight=2
