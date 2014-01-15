@@ -9,7 +9,7 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-sensible"]
 	path = vim/bundle/vim-sensible
-	url = git://github.com/tpope/vim-sensible.git
+	url = https://github.com/tpope/vim-sensible.git
 [submodule "colors/Smyck-Color-Scheme"]
 	path = colors/Smyck-Color-Scheme
 	url = https://github.com/hukl/Smyck-Color-Scheme.git
