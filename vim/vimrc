@@ -31,7 +31,7 @@ set hlsearch
 set background=dark
 
 if has("unix")
-    colorscheme Tomorrow-Night-Bright
+    colorscheme slate
 else
     colorscheme solarized
     "let g:solarized_termtrans=1
