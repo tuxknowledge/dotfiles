@@ -12,3 +12,6 @@ alias ps="ps -afe"
 alias egrep="egrep --color"
 alias grep="grep --color=auto"
 
+alias t='todo.sh -d $HOME/.todo/config'
+
+alias cal='ncal -3 -M -w'

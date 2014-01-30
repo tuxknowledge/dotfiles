@@ -96,17 +96,14 @@ export HISTIGNORE="&:ls:la:pwd:fg:bg:history:exit:clear"
 export HISTSIZE=4096
 export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S"
 
-if [ "$UNAME" = Darwin ]; then
-    if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-        . /usr/local/bin/virtualenvwrapper.sh
-    fi
-    if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
-        source /usr/local/git/contrib/completion/git-completion.bash
-    fi
-elif [ "$UNAME" = Linux ]; then
-    if [ -f /etc/bash_completion.d/virtualenvwrapper ]; then
-        . /etc/bash_completion.d/virtualenvwrapper
-    fi
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+    source /usr/local/git/contrib/completion/git-completion.bash
+fi
+if [ -f /etc/bash_completion.d/virtualenvwrapper ]; then
+    . /etc/bash_completion.d/virtualenvwrapper
 fi
 
 if ! shopt -oq posix; then
@@ -122,7 +119,14 @@ export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM="auto"
 
-export WORKON_HOME=$HOME/projekte/python/environments
-export PROJECT_HOME=$HOME/projekte/python
+export WORKON_HOME=$HOME/projects/python/environments
+export PROJECT_HOME=$HOME/projects/python
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
 
+# todo.sh
+export TODOTXT_DEFAULT_ACTION=ls
+
+if [ -d /usr/lib/oracle_instantclient ]; then
+    export ORACLE_HOME=/usr/lib/oracle_instantclient
+    export TNS_ADMIN=/usr/lib/oracle_instantclient
+fi
