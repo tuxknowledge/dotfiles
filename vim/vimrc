@@ -11,6 +11,11 @@ filetype plugin indent on
 " 256 Color support
 set t_Co=256
 
+" Backup dir
+set backup
+set backupdir=~/backup/,.,/tmp
+set dir=~/backup/,.,/tmp
+
 " UTF-8
 set encoding=utf-8
 set fileencoding=utf-8
