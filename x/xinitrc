@@ -7,6 +7,4 @@ xset +dpms
 xset -b
 xrdb ~/.Xresources
 setxkbmap de
-xscreensaver &
-i3
-
+startfluxbox
