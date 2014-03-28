@@ -13,8 +13,8 @@ set t_Co=256
 
 " Backup dir
 set backup
-set backupdir=~/backup/,.,/tmp
-set dir=~/backup/,.,/tmp
+set backupdir=~/.vimbackup
+set dir=~/.vimbackup
 
 " UTF-8
 set encoding=utf-8
@@ -36,7 +36,7 @@ set hlsearch
 set background=dark
 
 if has("unix")
-    colorscheme slate
+    "colorscheme slate
 else
     colorscheme solarized
     "let g:solarized_termtrans=1
