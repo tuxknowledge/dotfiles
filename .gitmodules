@@ -94,3 +94,6 @@
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = https://github.com/jcf/vim-latex.git
+[submodule "vim/bundle/vim-ps1"]
+	path = vim/bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1.git
