@@ -15,3 +15,5 @@ alias grep="grep --color=auto"
 alias t='todo.sh -d $HOME/.todo/config'
 
 alias cal='ncal -3 -M -w'
+
+alias tmux='TERM=screen-256color-bce tmux'
