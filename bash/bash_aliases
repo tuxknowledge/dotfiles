@@ -7,6 +7,7 @@ alias mv="mv -iv"
 alias du="du -h"
 alias df="df -h"
 alias mkdir="mkdir -p -v"
+alias free="free -mht"
 
 alias ps="ps -afe"
 alias egrep="egrep --color"
