@@ -100,3 +100,6 @@
 [submodule "vim/bundle/vagrant-vim"]
 	path = vim/bundle/vagrant-vim
 	url = https://github.com/smerrill/vagrant-vim.git
+[submodule "vim/bundle/vim-puppet"]
+	path = vim/bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet.git
